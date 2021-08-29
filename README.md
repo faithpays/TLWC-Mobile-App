@@ -1,4 +1,4 @@
-# churchapp_flutter
+# tcc_edmonton_mobile_app
 
 A new Flutter project.
 
