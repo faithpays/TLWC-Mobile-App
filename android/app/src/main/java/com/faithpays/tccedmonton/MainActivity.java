@@ -1,4 +1,4 @@
-package apps.envisionapps.churchapp_flutter;
+package com.faithpays.tccedmonton;
 import androidx.annotation.NonNull;
 
 import io.flutter.embedding.android.FlutterActivity;

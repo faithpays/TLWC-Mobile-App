@@ -1,4 +1,4 @@
-package apps.envisionapps.churchapp_flutter;
+package com.faithpays.tccedmonton;
 
 import io.flutter.plugin.common.PluginRegistry;
 import com.dexterous.flutterlocalnotifications.FlutterLocalNotificationsPlugin;
