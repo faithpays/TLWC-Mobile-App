@@ -19,6 +19,9 @@ import '../i18n/strings.g.dart';
 import '../providers/AudioPlayerModel.dart';
 import 'package:flutter/cupertino.dart';
 
+import 'NewDrawer.dart';
+import 'NewHome.dart';
+
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
   static const routeName = "/homescreen";
@@ -30,14 +33,14 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return HomePageItem();
+    return HomePageItem( selectedIndex: 0,);
   }
 }
 
+// ignore: must_be_immutable
 class HomePageItem extends StatefulWidget {
-  HomePageItem({
-    Key key,
-  }) : super(key: key);
+  int selectedIndex = 0;
+  HomePageItem({this.selectedIndex});
 
   @override
   _HomePageItemState createState() => _HomePageItemState();
@@ -55,16 +58,25 @@ class _HomePageItemState extends State<HomePageItem> {
         title: Text("Home")),
     BottomNavigationBarItem(
         icon: Icon(Icons.video_camera_back_outlined), title: Text("Media")),
-    BottomNavigationBarItem(icon: Icon(Icons.favorite_rounded), title: Text("Give")),
+    BottomNavigationBarItem(
+        icon: Icon(Icons.favorite_rounded), title: Text("Give")),
     BottomNavigationBarItem(
         icon: Icon(Icons.connect_without_contact), title: Text("Connect")),
     BottomNavigationBarItem(
         icon: Icon(Icons.event_available_outlined), title: Text("Events"))
   ];
+  void _onItemTapped(int index) {
+    setState(() {
+      widget.selectedIndex = index;
+      currentIndex = widget.selectedIndex;
+      print(currentIndex);
+    });
+  }
 
   @override
   void initState() {
     super.initState();
+    _onItemTapped(widget.selectedIndex);
     Future.delayed(const Duration(milliseconds: 0), () {
       Provider.of<WorshipGuideProvider>(context, listen: false)
           .setContext(context);
@@ -127,29 +139,23 @@ class _HomePageItemState extends State<HomePageItem> {
       },
       child: Scaffold(
         appBar: AppBar(
-          automaticallyImplyLeading: false,
-          elevation: 0,
-          toolbarHeight: 100.0,
-          title:
-
-              //Text("TCC TORONTO", style: TextStyle(fontWeight: FontWeight.bold),),
-
-              Padding(
-                padding: const EdgeInsets.only(left: 68.0),
-                child: Center(
-                  child: new Image(
-                      image: new ExactAssetImage(Img.get("TCC-whitetxt-Logo.png")),
-                      height: 80.0,
-                      width: 200.0,
-                      alignment: FractionalOffset.center),
-                ),
-              ),
-          shape: RoundedRectangleBorder(
-            borderRadius: const BorderRadius.only(
-              bottomLeft: Radius.circular(90.0),
-              bottomRight: Radius.circular(90.0),
+          centerTitle: true,
+          title: Text(
+            Strings.instance.appname,
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              fontSize: 18,
             ),
           ),
+          backgroundColor: MyColors.primary,
+          // leading: IconButton(
+          //   icon: Icon(Icons.menu),
+          //   onPressed: () {
+
+          //   },
+          // ),
+
           actions: <Widget>[
             /*Padding(
               padding: const EdgeInsets.all(8.0),
@@ -173,7 +179,7 @@ class _HomePageItemState extends State<HomePageItem> {
               ),
             ),*/
             Padding(
-              padding: const EdgeInsets.only(right: 35.0, top: 15),
+              padding: const EdgeInsets.only(right: 10.0, top: 5),
               child: IconButton(
                   icon: Icon(Icons.search),
                   onPressed: (() {
@@ -181,27 +187,38 @@ class _HomePageItemState extends State<HomePageItem> {
                   })),
             )
           ],
+          //tions: [IconButton(icon: Icon(Icons.search), onPressed: () {})],
         ),
-        body: buildPageBody(currentIndex),
-        // drawer: Container(
-        //   color: MyColors.grey_95,
-        //   width: 300,
-        //   child: Drawer(
-        //     key: scaffoldKey,
-        //     child: DrawerScreen(),
-        //   ),
-        // ),
+        body: IndexedStack(
+          index: widget.selectedIndex,
+          children: [
+           
+           for (final tabItem in TabNavigationItem.items) tabItem.page,
+          ]
+            //buildPageBody(currentIndex)]
+            
+            ),
+        drawer: Container(
+          color: MyColors.grey_95,
+          width: 300,
+          child: Drawer(
+            key: scaffoldKey,
+            child: AppDrawer(),
+          ),
+        ),
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           backgroundColor: Colors.blueGrey[900],
           selectedItemColor: MyColors.white,
           unselectedItemColor: MyColors.grey_40,
           currentIndex: currentIndex,
-          onTap: (int index) {
-            setState(() {
-              currentIndex = index;
-            });
-          },
+          onTap: _onItemTapped,
+          
+          // (int index) {
+          //   setState(() {
+          //     currentIndex = index;
+          //   });
+          // },
           items: navigationItems.toList(),
         ),
       ),
@@ -210,7 +227,7 @@ class _HomePageItemState extends State<HomePageItem> {
 
   Widget buildPageBody(int currentIndex) {
     if (currentIndex == 0) {
-      return MyHomePage();
+      return NewHomePage();
       /*ChangeNotifierProvider(
         create: (context) => HomeProvider(),
         child: MyHomePage(),
@@ -237,4 +254,43 @@ class _HomePageItemState extends State<HomePageItem> {
 
     return Container();
   }
+}
+
+class TabNavigationItem {
+  final Widget page;
+  final Widget title;
+  final Icon icon;
+
+  TabNavigationItem({this.page, this.title, this.icon});
+
+  static List<TabNavigationItem> get items => [
+        TabNavigationItem(
+          page: NewHomePage(),
+          icon: Icon(Icons.home),
+          title: Text("Home"),
+        ),
+        TabNavigationItem(
+          page: MediaScreen(),
+          icon: Icon(Icons.video_camera_back_outlined),
+          title: Text("Search"),
+        ),
+        TabNavigationItem(
+          page: GiveNowScreen(),
+          icon: Icon(Icons.favorite_rounded),
+          title: Text("Home"),
+        ),
+        TabNavigationItem(
+          page: ConnectScreen(),
+          icon: Icon(Icons.connect_without_contact),
+          title: Text("Home"),
+        ),
+        TabNavigationItem(
+          page: ChangeNotifierProvider(
+        create: (context) => EventsModel(),
+        child: EventsScreen(),
+      ),
+          icon: Icon(Icons.event_available_outlined),
+          title: Text("Home"),
+        ),
+      ];
 }

@@ -1,41 +1,34 @@
 {
   "project_info": {
-    "project_number": "185212721496",
-    "project_id": "tcc-edmonton",
-    "storage_bucket": "tcc-edmonton.appspot.com"
+    "project_number": "1066458796542",
+    "project_id": "tlwc-926d7",
+    "storage_bucket": "tlwc-926d7.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:185212721496:android:98712eec8c32b34515ad2d",
+        "mobilesdk_app_id": "1:1066458796542:android:4caf8bf7b79cd037a530af",
         "android_client_info": {
-          "package_name": "com.faithpays.tccedmonton"
+          "package_name": "org.faithpays.tlwc"
         }
       },
       "oauth_client": [
         {
-          "client_id": "185212721496-potlqs9h5809uu5ges8tl4qv1vab3tfd.apps.googleusercontent.com",
+          "client_id": "1066458796542-3g2v55heo863jhb2619emjj9cltkgvk7.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCo1yKQkcjKIlUhl1Xcac3GlGEpkXkuUEI"
+          "current_key": "AIzaSyBqrHiKDki-iSmCq51tf20XRXOXcaJ9pTE"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "185212721496-potlqs9h5809uu5ges8tl4qv1vab3tfd.apps.googleusercontent.com",
+              "client_id": "1066458796542-3g2v55heo863jhb2619emjj9cltkgvk7.apps.googleusercontent.com",
               "client_type": 3
-            },
-            {
-              "client_id": "185212721496-cgrl8utkqqc49p46o7042gsgc5rgohs5.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.faithpays.tccedmonton"
-              }
             }
           ]
         }

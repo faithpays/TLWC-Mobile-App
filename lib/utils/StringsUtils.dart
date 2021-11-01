@@ -1,6 +1,6 @@
 class StringsUtils {
-  static const String API_TOKEN = "FtjMxl0E5NZgqOznXa49fuypDKiL6hTc";
-  static const String CHURCH_ID = "DMS591618327";
+  static const String API_TOKEN = "kqyrRic5nvedOjPFxow23aYIh1ABQUEX";
+  static const String CHURCH_ID = "FP6448202";
   static const List<String> onboarder_image = [
     "assets/lottie/building.json",
     "assets/lottie/features.json",

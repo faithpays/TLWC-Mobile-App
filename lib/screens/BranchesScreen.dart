@@ -257,8 +257,8 @@ class ItemTile extends StatelessWidget {
                     child: IconButton(
                       padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
                       onPressed: () {
-                        MapsLauncher.launchCoordinates(branches.latitude, branches.longitude,
-                            '${branches.address}is here');
+                        MapsLauncher.launchCoordinates(branches.latitude,
+                            branches.longitude, '${branches.address}is here');
                       },
                       icon: Icon(
                         Icons.location_on,
@@ -267,9 +267,9 @@ class ItemTile extends StatelessWidget {
                   )),
                   Container(width: 15),
                   GestureDetector(
-                    onTap: (){
-                         MapsLauncher.launchCoordinates(branches.latitude, branches.longitude,
-                            'TCC EDMONTON is here');
+                    onTap: () {
+                      MapsLauncher.launchCoordinates(branches.latitude,
+                          branches.longitude, 'TLWC is here');
                     },
                     child: Expanded(
                       child: Text(

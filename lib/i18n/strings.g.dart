@@ -130,7 +130,7 @@ class Strings {
   static Strings _instance = Strings();
   static Strings get instance => _instance;
 
-  String get appname => 'TCC EDMONTON';
+  String get appname => 'TLWC';
   String get selectlanguage => 'Select Language';
   String get chooseapplanguage => 'Choose App Language';
   String get nightmode => 'Night Mode';
@@ -156,7 +156,7 @@ class Strings {
   String get bookmarks => 'Bookmarks';
   String get socialplatforms => 'Social Platforms';
   List<String> get onboardingpagetitles => [
-        'Welcome to TCC EDMONTON',
+        'Welcome to TLWC',
         'Packed with Features',
         'Audio, Video \n and Live Streaming',
         'Create Account',

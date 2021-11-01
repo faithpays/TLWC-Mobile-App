@@ -102,12 +102,12 @@ class _DrawerScreenState extends State<DrawerScreen> {
           children: <Widget>[
             Stack(
               children: [
-                Container(
-                  height: 150,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(image: ExactAssetImage(Img.get("tcclogo.png")),)
-                  ),
-                )
+                // Container(
+                //   height: 150,
+                //   decoration: BoxDecoration(
+                //     image: DecorationImage(image: ExactAssetImage(Img.get("tcclogo.png")),)
+                //   ),
+                // )
                 // (userdata != null && userdata.coverPhoto != "")
                 //     ? Container(
                 //         width: double.infinity,

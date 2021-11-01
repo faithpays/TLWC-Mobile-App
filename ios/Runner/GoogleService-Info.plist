@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>185212721496-cgrl8utkqqc49p46o7042gsgc5rgohs5.apps.googleusercontent.com</string>
+	<string>1066458796542-2b73g1gdolf4r0i7j62s54353oonh0r1.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.185212721496-cgrl8utkqqc49p46o7042gsgc5rgohs5</string>
+	<string>com.googleusercontent.apps.1066458796542-2b73g1gdolf4r0i7j62s54353oonh0r1</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCN32qQw_bW6ivFb1sm7Zfi-wrFPp0oJ8o</string>
+	<string>AIzaSyDDaESnAmOIjf4VR-biePa6eD9-L0EqbwA</string>
 	<key>GCM_SENDER_ID</key>
-	<string>185212721496</string>
+	<string>1066458796542</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.faithpays.tccedmonton</string>
+	<string>org.faithpays.tlwc</string>
 	<key>PROJECT_ID</key>
-	<string>tcc-edmonton</string>
+	<string>tlwc-926d7</string>
 	<key>STORAGE_BUCKET</key>
-	<string>tcc-edmonton.appspot.com</string>
+	<string>tlwc-926d7.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:185212721496:ios:f3bae42ef86092dd15ad2d</string>
+	<string>1:1066458796542:ios:c0d90564735bff7ba530af</string>
 </dict>
 </plist>

@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:tools="http://schemas.android.com/tools"
-    package="com.faithpays.tccedmonton">
+    package="org.faithpays.tlwc">
 
      <uses-permission android:name="android.permission.INTERNET" />
      <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -15,7 +15,7 @@ xmlns:tools="http://schemas.android.com/tools"
     
     <application
         android:name=".Application"
-        android:label="TCC EDMONTON"
+        android:label="TLWC"
         android:usesCleartextTraffic="true"
         android:networkSecurityConfig="@xml/jz_network_security_config"
         android:hardwareAccelerated="false"

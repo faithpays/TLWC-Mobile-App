@@ -1,4 +1,4 @@
-package com.faithpays.tccedmonton;
+package org.faithpays.tlwc;
 
 import io.flutter.plugin.common.PluginRegistry;
 import com.dexterous.flutterlocalnotifications.FlutterLocalNotificationsPlugin;
