@@ -1,4 +1,4 @@
-package org.faithpays.tlwc;
+package app.tlwcchurchwpg.ca;
 import androidx.annotation.NonNull;
 
 import io.flutter.embedding.android.FlutterActivity;

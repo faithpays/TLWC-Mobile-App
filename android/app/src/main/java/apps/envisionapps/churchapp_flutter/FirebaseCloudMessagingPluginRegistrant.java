@@ -1,4 +1,4 @@
-package org.faithpays.tlwc;
+package app.tlwcchurchwpg.ca;
 
 import io.flutter.plugin.common.PluginRegistry;
 import com.dexterous.flutterlocalnotifications.FlutterLocalNotificationsPlugin;

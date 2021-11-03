@@ -271,15 +271,13 @@ class ItemTile extends StatelessWidget {
                       MapsLauncher.launchCoordinates(branches.latitude,
                           branches.longitude, 'TLWC is here');
                     },
-                    child: Expanded(
-                      child: Text(
-                        "Get Direction",
-                        style: TextStyles.subhead(context).copyWith(
-                          fontWeight: FontWeight.w500,
-                          decoration: TextDecoration.underline,
-                        ),
-                        textAlign: TextAlign.left,
+                    child: Text(
+                      "Get Direction",
+                      style: TextStyles.subhead(context).copyWith(
+                        fontWeight: FontWeight.w500,
+                        decoration: TextDecoration.underline,
                       ),
+                      textAlign: TextAlign.left,
                     ),
                   ),
                 ],

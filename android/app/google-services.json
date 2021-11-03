@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "1066458796542",
-    "project_id": "tlwc-926d7",
-    "storage_bucket": "tlwc-926d7.appspot.com"
+    "project_number": "839433714671",
+    "project_id": "new-tlwc",
+    "storage_bucket": "new-tlwc.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1066458796542:android:4caf8bf7b79cd037a530af",
+        "mobilesdk_app_id": "1:839433714671:android:5830aacd8086d2c8e1d41a",
         "android_client_info": {
-          "package_name": "org.faithpays.tlwc"
+          "package_name": "app.tlwcchurchwpg.ca"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1066458796542-3g2v55heo863jhb2619emjj9cltkgvk7.apps.googleusercontent.com",
+          "client_id": "839433714671-qkqo2g15sevrr5d597u4i56vfv4s1vk2.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBqrHiKDki-iSmCq51tf20XRXOXcaJ9pTE"
+          "current_key": "AIzaSyAr7ohZloaKFy5V1Lulpuisewk3oMVD4FY"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1066458796542-3g2v55heo863jhb2619emjj9cltkgvk7.apps.googleusercontent.com",
+              "client_id": "839433714671-qkqo2g15sevrr5d597u4i56vfv4s1vk2.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
