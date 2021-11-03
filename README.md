@@ -1,4 +1,4 @@
-# tcc_edmonton_mobile_app
+# TLWC Mobile App
 
 A new Flutter project.
 
