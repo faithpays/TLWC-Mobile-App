@@ -32,96 +32,150 @@ class _ConnectScreenState extends State<ConnectScreen> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Container(
-        height: double.infinity,
-        child: GridView.builder(
-          shrinkWrap: true,
-          itemCount: _conect.length,
-          scrollDirection: Axis.vertical,
-          padding: EdgeInsets.all(3),
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              crossAxisSpacing: 8.0,
-              mainAxisSpacing: 8.0,
-              childAspectRatio: 0.95),
-          itemBuilder: (BuildContext context, int index) {
-            return InkWell(
-              child: Container(
-                //width: MediaQuery.of(context).size.width,
-
-                padding: EdgeInsets.all(0),
-                child: Stack(
-                  children: <Widget>[
-                    Container(
-                      
-                      height: double.infinity,
-                      //margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(5),
-                        child: Image.asset(
-                          
-                          _conect[index].image,
-                          color: Colors.black26,
-  colorBlendMode: BlendMode.darken,
-                          //colorBlendMode: BlendMode.dstIn,
-                          fit: BoxFit.cover,
-                          width: double.infinity,
-                          height: double.infinity,
-                          //color: Colors.black26,
-                        ),
-                      ),
-                    ),
-                    Align(
-                      alignment: Alignment.bottomCenter,
-                      child: Container(
-                        //color: Colors.black54,
-                        margin: EdgeInsets.only(bottom: 50),
-                        height: 35,
-                        alignment: Alignment.center,
-                        child: Text(
-                          _conect[index].title,
-                          style: TextStyles.caption(context).copyWith(
-                            fontSize: 18.0,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                            //fontFamily: "serif",
+      padding: const EdgeInsets.all(6.0),
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: ConnectCard(),
+          ),
+          // SizedBox(height: 5,),
+          Expanded(
+            child: Container(
+              child: GridView.builder(
+                shrinkWrap: true,
+                itemCount: _conect.length,
+                scrollDirection: Axis.vertical,
+                padding: EdgeInsets.all(3),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 8.0,
+                    mainAxisSpacing: 8.0,
+                    childAspectRatio: 0.95),
+                itemBuilder: (BuildContext context, int index) {
+                  return InkWell(
+                    child: Container(
+                      //width: MediaQuery.of(context).size.width,
+          
+                      padding: EdgeInsets.all(0),
+                      child: Stack(
+                        children: <Widget>[
+                          Container(
+                            height: double.infinity,
+                            //margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(5),
+                              child: Image.asset(
+                                _conect[index].image,
+                                color: Colors.black26,
+                                colorBlendMode: BlendMode.darken,
+                                //colorBlendMode: BlendMode.dstIn,
+                                fit: BoxFit.cover,
+                                width: double.infinity,
+                                height: double.infinity,
+                                //color: Colors.black26,
+                              ),
+                            ),
                           ),
-                          maxLines: 1,
-                          textAlign: TextAlign.left,
-                        ),
+                          Align(
+                            alignment: Alignment.bottomCenter,
+                            child: Container(
+                              //color: Colors.black54,
+                              margin: EdgeInsets.only(bottom: 50),
+                              height: 35,
+                              alignment: Alignment.center,
+                              child: Text(
+                                _conect[index].title,
+                                style: TextStyles.caption(context).copyWith(
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  //fontFamily: "serif",
+                                ),
+                                maxLines: 1,
+                                textAlign: TextAlign.left,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                  ],
-                ),
+                    onTap: () {
+                      switch (index) {
+                        case 0:
+                          Navigator.of(context)
+                              .pushNamed(LifeGroupScreen.routeName);
+                          break;
+                        case 1:
+                          Navigator.of(context)
+                              .pushNamed(MinistriesScreen.routeName);
+                          break;
+                        case 2:
+                          Navigator.of(context)
+                              .pushNamed(WorshipGuideScreen.routeName);
+                          break;
+                        case 3:
+                          Navigator.of(context)
+                              .pushNamed(PrayerRequestScreen.routeName);
+                          break;
+                        case 4:
+                          Navigator.of(context)
+                              .pushNamed(BranchesScreen.routeName);
+                          break;
+                        case 5:
+                          Navigator.of(context)
+                              .pushNamed(GiveTestimonyScreen.routeName);
+                          break;
+                      }
+                    },
+                  );
+                },
               ),
-              onTap: () {
-                switch (index) {
-                  case 0:
-                    Navigator.of(context).pushNamed(LifeGroupScreen.routeName);
-                    break;
-                  case 1:
-                    Navigator.of(context).pushNamed(MinistriesScreen.routeName);
-                    break;
-                  case 2:
-                    Navigator.of(context).pushNamed(WorshipGuideScreen.routeName);
-                    break;
-                  case 3:
-                    Navigator.of(context)
-                        .pushNamed(PrayerRequestScreen.routeName);
-                    break;
-                  case 4:
-                    Navigator.of(context).pushNamed(BranchesScreen.routeName);
-                    break;
-                  case 5:
-                    Navigator.of(context)
-                        .pushNamed(GiveTestimonyScreen.routeName);
-                    break;
-                }
-              },
-            );
-          },
+            ),
+          ),
+          // SizedBox(height: 140,)
+        ],
+      ),
+    );
+  }
+}
+
+class ConnectCard extends StatelessWidget {
+  const ConnectCard({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context).pushNamed(ConnectCardScreen.routeName);
+      },
+      child: Container(
+        // padding: EdgeInsets.all(5.0),
+        child: Center(
+          child: Text(
+            "Connection Card",
+            style: TextStyles.caption(context).copyWith(
+              fontSize: 18.0,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+              //fontFamily: "serif",
+            ),
+            maxLines: 1,
+            textAlign: TextAlign.left,
+          ),
         ),
+        decoration: BoxDecoration(
+          image: DecorationImage(
+              // colorFilter:
+              //     ColorFilter.mode(Colors.black45, BlendMode.darken),
+              fit: BoxFit.cover,
+              image: AssetImage("assets/images/connectcard.jpg")),
+          borderRadius: BorderRadius.circular(5),
+        ),
+        height: 150,
+        width: MediaQuery.of(context).size.width,
       ),
     );
   }
