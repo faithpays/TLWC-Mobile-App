@@ -1,3 +1,4 @@
+import 'package:churchapp_flutter/utils/TextStyles.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/cupertino.dart';
@@ -93,10 +94,15 @@ class MediaScreenRouteState extends State<VideoScreenBody> {
       controller: mediaScreensModel.refreshController,
       onRefresh: _onRefresh,
       onLoading: _onLoading,
-      child: (mediaScreensModel.isError == true && items.length == 0)
+      child: (mediaScreensModel.isError)
           ? NoitemScreen(
               title: t.oops, message: t.dataloaderror, onClick: _onRefresh)
-          : ListView.builder(
+          : (true && items.length == 0)
+          ? Center(child: Text("Video folder is currently empty", style: TextStyles.medium(context).copyWith(
+                        //color: MyColors.primary
+                        )),)
+          
+         : ListView.builder(
               itemCount: items.length,
               scrollDirection: Axis.vertical,
               padding: EdgeInsets.all(3),
